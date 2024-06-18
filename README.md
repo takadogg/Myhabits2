@@ -1,5 +1,3 @@
-# 記述途中のREADMEです
-
 ## アプリケーション名
 
 Myhabits2
@@ -25,9 +23,13 @@ https://myhabits2.onrender.com
 
 　制作者本人が過去に紙媒体で実践していましたが、日常生活の中で紙に細かい行動の記録をする煩わしさを感じました。atomic habitsに影響を受けた人が、最初のステップである習慣の観察をより気軽に始められるようにと願い今回の開発に至りました。
 
-## ！洗い出した要件
+## 実装した機能について画像やGIF
 
-## ！実装した機能について画像やGIFおよびその説明
+### 習慣投稿機能
+
+　一番上の欄に直前の行動を入力したあと、プルダウンから評価を選択します。最後に記録するを押すと送信が完了し、一番上に表示されます。
+
+[![Image from Gyazo](https://i.gyazo.com/0a3829632a559688b423dd198a252766.gif)](https://gyazo.com/0a3829632a559688b423dd198a252766)
 
 ## 実装予定の機能
 
@@ -35,7 +37,7 @@ https://myhabits2.onrender.com
 
 ユーザー管理機能の実装予定
 
-##　データベース設計
+## データベース設計
 
 [![Image from Gyazo](https://i.gyazo.com/39e3fdab65f3cfaa169569b6a3c9bc2a.png)](https://gyazo.com/39e3fdab65f3cfaa169569b6a3c9bc2a)
 
@@ -43,8 +45,54 @@ https://myhabits2.onrender.com
 
 ※現在、習慣投稿ページのみ
 
-## ！開発環境
+## 開発環境
 
-## ！ローカルでの動作方法
+* フロントエンド
 
-## ！工夫したポイント
+    HTML, CSS
+
+* バックエンド
+
+    Ruby 3.2.0
+
+    Ruby on Rails 7.0.8.4
+
+* 使用したGeｍ
+
+    ActiveHash
+
+* データベース
+
+    SQLite (development)
+
+    PostgreSQL (production)
+
+## ローカルでの動作方法
+
+### １．リポジトリをクローンします
+
+```
+git clone https://github.com/takadogg/Myhabits2
+```
+
+### ２．必要なGemをインストールします
+
+```
+bundle install
+```
+
+### ３．データベースを準備します
+
+```
+rails db:create
+
+rails db:migrate
+
+rails db:seed(必要な場合)
+```
+
+## 工夫したポイント
+
+* 行動を評価する機能では、ActiveHashを用いてパフォーマンスを向上させました。
+
+* 画面遷移をなくすことにより、一つ一つの記録をストレスなく行えるようにしました。
